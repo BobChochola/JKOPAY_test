@@ -4,13 +4,30 @@ import pytest
 def api_url():
     return "https://api.example/service/login"
 
+def test_login_empty_account(api_url):
+
+    login_auth = "valid_login_auth"
+
+payload = {
+    "Account": "", # "miss account"
+    "LoginAuth": login_auth
+}
+
+response = requests.post(api_url, json=payload)
+
+assert response.status_code == 400
+
+result = response.json()
+assert result["Status"] == "ErrorCode_02" # 400
+assert result["Message"] == "提示錯誤訊息 02" #login_auth is required, or Missing required parameters
+
 def test_login_missing_fields(api_url):
 
    account = "valid_account"
 
     payload = {
-        "Account": account
-        # login_auth = "miss auth"
+        "Account": account,
+        "LoginAuth": "" # "miss auth"
     }
 
     response = requests.post(api_url, json=payload)
@@ -19,6 +36,40 @@ def test_login_missing_fields(api_url):
     
     result = response.json()
     assert result["Status"] == "ErrorCode_02" # 400
+    assert result["Message"] == "提示錯誤訊息 02" #login_auth is required, or Missing required parameters
+
+def test_login_null_account(api_url):x
+    
+    login_auth = "valid_login_auth"
+
+    payload = {
+    "Account": None,
+    "LoginAuth": login_auth
+    }
+
+    response = requests.post(api_url, json=payload)
+
+    assert response.status_code == 400
+
+    result = response.json()
+    assert result["Status"] == "ErrorCode_02" #400
+    assert result["Message"] == "提示錯誤訊息 02" #login_auth is required, or Missing required parameters
+
+def test_login_null_loginauth(api_url):
+    
+    account = "valid_account"
+
+    payload = {
+    "Account": account,
+    "LoginAuth": None
+    }
+
+    response = requests.post(api_url, json=payload)
+
+    assert response.status_code == 400
+
+    result = response.json()
+    assert result["Status"] == "ErrorCode_02" #400
     assert result["Message"] == "提示錯誤訊息 02" #login_auth is required, or Missing required parameters
 
 def test_login_invalid_credentials(api_url):
@@ -53,7 +104,7 @@ def test_login_invalid_credentials(api_url):
     
     result = response.json()
     assert result["Status"] == 402
-    assert result["Message"] == "登入驗證失敗"
+    assert result["Message"] == "payment required"
 
 
 def test_login_invalid_request(api_url):
