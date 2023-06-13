@@ -57,61 +57,61 @@ graph TD;
    1. **Input Field Length Validation:**
 
    - Test scenario: Enter a payment tool information with an excessively long input in the relevant fields.
-     `Expected result:` The app should provide a validation error message indicating that the input length exceeds the allowed limit, and the user should be prevented from submitting the form until the input is within the acceptable range.
+   - `Expected result:` The app should provide a validation error message indicating that the input length exceeds the allowed limit, and the user should be prevented from submitting the form until the input is within the acceptable range.
 
    2. **Error Handling for Invalid Inputs:**
 
    - Test scenario: Enter invalid data formats or incorrect information in the payment tool field.
-     `Expected result:` The app should display appropriate error messages for each invalid input field.
+   - `Expected result:` The app should display appropriate error messages for each invalid input field.
 
    3. **Visual Differentiation for Multiple Payment Tools:**
 
    - Test scenario: Bind both a credit card and a bank account simultaneously.
-     `Expected result:` displaying distinct icons or labels
+   - `Expected result:` displaying distinct icons or labels
 
    4. **Responsive Design Testing:**
 
    - Test scenario: Access the payment tool binding interface on various screen sizes and resolutions.
-     `Expected result:` ipad, other mobile and mock on website.
+   - `Expected result:` ipad, other mobile and mock on website.
 
    5. **Boundary Value **
 
    - future dates, past dates, incorrect date formats, null.
-     `Expected result:` failed.
+   - `Expected result:` failed.
 
 2. Validity Verification:
 
    1. **Correct Payment Tool Validation:**
 
    - Test scenario: Bind a payment tool using a valid bank account or credit card.
-     `Expected result:` Successful
+   - `Expected result:` Successful
 
    2. **Invalid Payment Tool Validation:**
 
    - Test scenario: Attempt to bind a payment tool using an invalid bank account or credit card.
-     `Expected result:` The application should reject the binding of invalid payment tools and display appropriate error messages indicating that the payment cannot be processed.
+   - `Expected result:` The application should reject the binding of invalid payment tools and display appropriate error messages indicating that the payment cannot be processed.
 
    3. **Incorrect Format Validation:**
 
    - Test scenario: Enter incorrect formats or invalid data in the payment tool fields.
-     `Expected result:` The application should identify and validate whether the entered format meets the required format.
+   - `Expected result:` The application should identify and validate whether the entered format meets the required format.
 
    4. **Validity of Expiry Date:**
 
    - Test scenario: Enter different valid dates for credit cards, including past dates, future dates, and incorrect date formats.
-     `Expected result:` The application should validate the entered expiry date against the required format and range.
+   - `Expected result:` The application should validate the entered expiry date against the required format and range.
 
 3. Security Testing:
 
    1. **Preventing CSRF (Cross-Site Request Forgery) Attacks:**
 
    - Test scenario: Attempt to perform payment tool binding using unauthorized websites or conduct CSRF attacks, aiming to execute operations without the user's knowledge.
-     `Expected result:` The application should implement appropriate CSRF protection measures to prevent unauthorized websites or attackers from exploiting.
+   - `Expected result:` The application should implement appropriate CSRF protection measures to prevent unauthorized websites or attackers from exploiting.
 
    2. **Preventing Account Lockouts:**
 
    - Test scenario: Continuously enter invalid credentials (such as passwords) multiple times and observe how the application handles account lockouts.
-     `Expected result:` The application should implement mechanisms to prevent malicious attackers from using brute-force methods to lock user accounts. After a certain number of invalid attempts, the account should be locked for a period of time, and users should be notified of relevant security measures.
+   - `Expected result:` The application should implement mechanisms to prevent malicious attackers from using brute-force methods to lock user accounts. After a certain number of invalid attempts, the account should be locked for a period of time, and users should be notified of relevant security measures.
 
 4. Cross-Platform Testing:
 
@@ -128,10 +128,10 @@ graph TD;
 6. Exceptional Condition Testing:
    1. **Network Connection Abnormality Testing:**
    - Test scenario: Simulate a disconnected network or a low-speed network environment.
-     `Expected result`Ensure that the app can handle network connection abnormalities appropriately, such as providing appropriate error messages, automatically synchronizing data once the connection is restored.
+   - `Expected resul-t`Ensure that the app can handle network connection abnormalities appropriately, such as providing appropriate error messages, automatically synchronizing data once the connection is restored.
    2. **Device Compatibility Testing:**
    - Test scenario: Test the app on different devices or operating system versions.
-     `Expected result:` Validate the app's compatibility on different devices or operating system versions, such as ensuring proper screen adjustments, functioning correctly.
+   - `Expected result:` Validate the app's compatibility on different devices or operating system versions, such as ensuring proper screen adjustments, functioning correctly.
 
 ### Question-2:
 
