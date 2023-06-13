@@ -4,15 +4,17 @@
 
 #### Test Target：
 
-```Mermaid
-graph TD
-    A(中心) --> B(UI Testing)
-    A --> H(Security Testing)
-    A --> F(Exception Handling Testing)
-    A --> G(Validity Verification)
-    B --> C(Cross-Platform Testing)
-    B --> D(Stability Testing for Binding and Unbinding)
-    B --> E(Boundary Value Testing)
+Here is a simple flow chart:
+
+```mermaid
+graph TD;
+    A(中心) --> B(UI Testing);
+    A --> H(Security Testing);
+    A --> F(Exception Handling Testing);
+    A --> G(Validity Verification);
+    B --> C(Cross-Platform Testing);
+    B --> D(Stability Testing for Binding and Unbinding);
+    B --> E(Boundary Value Testing);
 ```
 
 #### Test Method：
