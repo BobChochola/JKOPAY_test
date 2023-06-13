@@ -52,7 +52,7 @@ def test_login_less_datatime_successful(api_url):
     assert result["Status"] == 200
     assert result["Message"] == "Login successful"
 
-    def test_datetime_invalid_successful(api_url):
+def test_datetime_invalid_successful(api_url):
     account = "example_account"
     login_auth = "example_login_auth"
     datetime = "abc123"

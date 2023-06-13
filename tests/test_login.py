@@ -92,7 +92,7 @@ def test_login_invalid_credentials(api_url):
     assert result["Status"] == "ErrorCode_01" #401
     assert result["Message"] == "提示錯誤訊息 01" #account or login_auth are invalid
 
-    def test_login_subscription_failed(api_url):
+def test_login_subscription_failed(api_url):
     account = "example_account"
     login_auth = "example_invalid_auth"
     payload = {
