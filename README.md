@@ -4,6 +4,7 @@
 
 #### test target：
 
+```Mermaid
 graph TD
 A(Test Method) --> UI Testing
 UI Testing --> Boundary Value Testing
@@ -12,6 +13,7 @@ A --> Security Testing
 UI Testing --> Cross-Platform Testing
 UI Testing --> Stability Testing for Binding and Unbinding
 A --> Exception Handling Testing
+```
 
 #### Test Method：
 
