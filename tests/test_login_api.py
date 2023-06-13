@@ -70,9 +70,6 @@ def test_login_less_datatime_successful(api_url):
     assert result["Status"] == 200
     assert result["Message"] == "Login successful"
 
-    import requests
-import pytest
-
 @pytest.fixture
 def test_endpoint_not_found(api_url):
     invalid_endpoint = "https://api.example/service/invalid_endpoint"
