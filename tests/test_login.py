@@ -4,12 +4,9 @@ import pytest
 API_URL = "https://api.example/service/login"
 
 def test_login_empty_account():
-    
-    login_auth = "valid_login_auth"
-
     payload = {
     "Account": "", # "miss account"
-    "LoginAuth": login_auth
+    "LoginAuth": "valid_login_auth"
     }
 
     response = requests.post(API_URL, json=payload)
@@ -21,11 +18,8 @@ def test_login_empty_account():
     assert result["Message"] == "Invalid Account Number"
 
 def test_login_missing_fields():
-   
-    account = "valid_account"
-
     payload = {
-        "Account": account,
+        "Account": "valid_account",
         "LoginAuth": "" # "miss auth"
     }
 
@@ -38,12 +32,9 @@ def test_login_missing_fields():
     assert result["Message"] == "Invalid LoginAuth"
 
 def test_login_null_account():
-    
-    login_auth = "valid_login_auth"
-
     payload = {
     "Account": None,
-    "LoginAuth": login_auth
+    "LoginAuth": "valid_login_auth"
     }
 
     response = requests.post(API_URL, json=payload)
@@ -55,11 +46,8 @@ def test_login_null_account():
     assert result["Message"] == "Invalid Account Number"
 
 def test_login_null_loginauth():
-    
-    account = "valid_account"
-
     payload = {
-    "Account": account,
+    "Account": "valid_account",
     "LoginAuth": None
     }
 
@@ -72,15 +60,10 @@ def test_login_null_loginauth():
     assert result["Message"] == "Invalid LoginAuth"
 
 def test_login_invalid_credentials():
-
-    account = "invalid_account" # bob@gmail.com not exist, bob@123, 123@123
-    login_auth = "invalid_login_auth"
-    datetime = "2023-06-12"
-
     payload = {
-        "Account": account,
-        "LoginAuth": login_auth,
-        "Datetime": datetime
+        "Account": "invalid_account", # bob@gmail.com not exist, bob@123, 123@123
+        "LoginAuth": "invalid_login_auth",
+        "Datetime": "2023-06-12"
     }
 
     response = requests.post(API_URL, json=payload)
@@ -92,11 +75,9 @@ def test_login_invalid_credentials():
     assert result["Message"] == "Invalid Account Number"
 
 def test_login_subscription_failed():
-    account = "example_account"
-    login_auth = "example_invalid_auth"
     payload = {
-        "Account": account,
-        "LoginAuth": login_auth
+        "Account": "example_account",
+        "LoginAuth": "example_invalid_auth"
     }
     response = requests.post(API_URL, json=payload)
     assert response.status_code == 402
@@ -107,7 +88,6 @@ def test_login_subscription_failed():
 
 
 def test_login_invalid_request():
-
     payload = {
         "Account": "valid_account",
         "LoginAuth": "valid_auth"
