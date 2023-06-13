@@ -5,11 +5,14 @@
 #### Test Target：
 
 ```Mermaid
-graph TD;
-A[Test Method] -->|UI Testing| B[Boundary Value Testing];
-A -->|Validity Verification| C[Security Testing];
-A -->|Exception Handling Testing| D[Cross-Platform Testing];
-B --> E[Stability Testing for Binding and Unbinding];
+graph TD
+    A(中心) --> B(UI Testing)
+    A --> H(Security Testing)
+    A --> F(Exception Handling Testing)
+    A --> G(Validity Verification)
+    B --> C(Cross-Platform Testing)
+    B --> D(Stability Testing for Binding and Unbinding)
+    B --> E(Boundary Value Testing)
 ```
 
 #### Test Method：
