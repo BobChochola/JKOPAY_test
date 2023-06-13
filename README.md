@@ -8,7 +8,7 @@ Here is a simple flow chart:
 
 ```mermaid
 graph TD;
-    A(中心) --> B(UI Testing);
+    A(Test Method) --> B(UI Testing);
     A --> H(Security Testing);
     A --> F(Exception Handling Testing);
     A --> G(Validity Verification);
