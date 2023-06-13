@@ -6,13 +6,10 @@
 
 ```Mermaid
 graph TD;
-A(Test Method) --> UI Testing;
-UI Testing --> Boundary Value Testing;
-A --> Validity Verification;
-A --> Security Testing;
-UI Testing --> Cross-Platform Testing;
-UI Testing --> Stability Testing for Binding and Unbinding;
-A --> Exception Handling Testing;
+A[Test Method] -->|UI Testing| B[Boundary Value Testing];
+A -->|Validity Verification| C[Security Testing];
+A -->|Exception Handling Testing| D[Cross-Platform Testing];
+B --> E[Stability Testing for Binding and Unbinding];
 ```
 
 #### Test Method：
