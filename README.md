@@ -74,7 +74,7 @@ graph TD;
    - Test scenario: Access the payment tool binding interface on various screen sizes and resolutions.
    - `Expected result:` ipad, other mobile and mock on website.
 
-   5. **Boundary Value **
+   5. **Boundary Value**
 
    - future dates, past dates, incorrect date formats, null.
    - `Expected result:` failed.
