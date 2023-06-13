@@ -8,18 +8,18 @@ def test_login_empty_account(api_url):
 
     login_auth = "valid_login_auth"
 
-payload = {
+    payload = {
     "Account": "", # "miss account"
     "LoginAuth": login_auth
-}
+    }
 
-response = requests.post(api_url, json=payload)
+    response = requests.post(api_url, json=payload)
 
-assert response.status_code == 400
+    assert response.status_code == 400
 
-result = response.json()
-assert result["Status"] == "ErrorCode_02" # 400
-assert result["Message"] == "提示錯誤訊息 02" #login_auth is required, or Missing required parameters
+    result = response.json()
+    assert result["Status"] == "ErrorCode_02" # 400
+    assert result["Message"] == "提示錯誤訊息 02" #login_auth is required, or Missing required parameters
 
 def test_login_missing_fields(api_url):
 
